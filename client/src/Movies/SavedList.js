@@ -1,9 +1,10 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link, useRouteMatch } from 'react-router-dom'
 
 
 const SavedList = props => {
-  const history= useHistory()
+  const history = useHistory()
+  const { url } = useRouteMatch()
 
   const homeButton = () => {
     history.push('/')
@@ -13,7 +14,9 @@ const SavedList = props => {
   <div className="saved-list">
     <h3>Saved Movies:</h3>
     {props.list.map(movie => (
-      <span className="saved-movie">{movie.title}</span>
+      <Link to={`${url}movies/${movie.id}`}>
+        <span className="saved-movie">{movie.title}</span>
+      </Link>
     ))}
     <div className="home-button" onClick={homeButton}>Home</div>
   </div>

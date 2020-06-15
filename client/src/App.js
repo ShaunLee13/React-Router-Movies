@@ -25,7 +25,11 @@ const App = () => {
   }, []);
 
   const addToSavedList = movie => {
-    setSavedList([...savedList, movie]);
+    if(savedList.includes(movie)){
+      return null
+    } else {
+      setSavedList([...savedList, movie]);
+    }
   };
 
   return (
@@ -37,7 +41,7 @@ const App = () => {
         </Route>
 
         <Route path='/'>
-          <MovieList movies={movieList  }/>
+          <MovieList movies={movieList}/>
         </Route>
       </Switch>
     </div>

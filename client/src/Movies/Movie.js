@@ -22,10 +22,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
-  
-  // Uncomment this only when you have moved on to the stretch goals
-
+  },itemId);
 
   if (!movie) {
     return <div>Loading movie information...</div>;
