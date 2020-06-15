@@ -4,6 +4,11 @@ const MovieCard = props => {
   const { movie, save } = props
   const { title, director, metascore, stars } = movie;
 
+  const saveMovie = () => {
+    const addToSavedList = props.save;
+    addToSavedList(movie)
+  }
+
   return (
     <div className="movie-card">
       <h2>{title}</h2>
@@ -20,7 +25,7 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
-      {save ? <div className="save-button">Save</div> : null}
+      {save ? <div className="save-button" onClick={saveMovie}>Save</div> : null}
     </div>
       
   );
