@@ -3,8 +3,6 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
 const Movie = (props) => {
-  const { details } = props
-  console.log(details, 'details')
   const [movie, setMovie] = useState();
   const { itemId } = useParams()
 
