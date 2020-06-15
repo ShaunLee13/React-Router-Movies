@@ -32,8 +32,8 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
       <Switch>
-        <Route path='/movies/:pathId'>
-          <Movie />
+        <Route path='/movies/:itemId'>
+          <Movie details={movieList} />
         </Route>
 
         <Route path='/'>
