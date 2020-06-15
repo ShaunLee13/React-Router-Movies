@@ -25,13 +25,17 @@ const App = () => {
   }, []);
 
   const addToSavedList = movie => {
-    if(savedList.includes(movie)){
-      return null
-    } else {
-      setSavedList([...savedList, movie]);
-    }
-  };
+    const movieCheck = savedList.some(name => name.title == movie.title)
+    if (!movieCheck) setSavedList([...savedList, movie]);
 
+    // if(savedList.includes(movie)){
+    //   setSavedList(savedList)
+    // } else{
+    //   setSavedList([...savedList, movie]);
+    // }
+  };
+ 
+  console.log(savedList)
   return (
     <div>
       <SavedList list={savedList} />

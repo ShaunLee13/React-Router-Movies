@@ -22,7 +22,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },itemId);
+  },[movie]);
 
   if (!movie) {
     return <div>Loading movie information...</div>;
